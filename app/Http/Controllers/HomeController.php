@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Anggota;
-
-class AnggotaController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,8 @@ class AnggotaController extends Controller
      */
     public function index()
     {
-        $anggota = Anggota::all();
-        return view('anggota.index', compact('anggota'), [
-            'title' => 'Anggota',
+        return view('index', [
+            'title' => 'Home',
         ]);
     }
 
@@ -28,7 +25,7 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-        return view('anggota.create');
+        //
     }
 
     /**
@@ -39,8 +36,7 @@ class AnggotaController extends Controller
      */
     public function store(Request $request)
     {
-        Anggota::create($request->all());
-        return redirect('/anggota')->with('msg', 'Data Berhasil Ditambahkan');
+        //
     }
 
     /**
