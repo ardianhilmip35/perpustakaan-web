@@ -16,4 +16,4 @@ use App\Http\Controllers\AnggotaController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/mahasiswa', [AnggotaController::class, 'index']);
+Route::resource('anggota', AnggotaController::class);

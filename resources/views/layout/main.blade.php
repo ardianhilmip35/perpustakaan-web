@@ -31,7 +31,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li><a class="dropdown-item" href="/petugas">Petugas</a></li>
                   <li><a class="dropdown-item" href="/buku">Buku</a></li>
-                  <li><a class="dropdown-item" href="/mahasiswa">Mahasiswa</a></li>
+                  <li><a class="dropdown-item" href="{{ route('anggota.index') }}">Mahasiswa</a></li>
                 </ul>
               </div>
               <div class="btn-group">

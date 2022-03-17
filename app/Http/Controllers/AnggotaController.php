@@ -17,7 +17,7 @@ class AnggotaController extends Controller
     {
         $anggota = Anggota::all();
         return view('anggota.index', compact('anggota'), [
-            'title' => 'Anggota',
+            'title' => 'Mahasiswa',
         ]);
     }
 
@@ -28,7 +28,9 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-        return view('anggota.create');
+        return view('anggota.create', [
+            'title' => 'Tambah Mahasiswa',
+        ]);
     }
 
     /**
@@ -40,7 +42,7 @@ class AnggotaController extends Controller
     public function store(Request $request)
     {
         Anggota::create($request->all());
-        return redirect('/anggota')->with('msg', 'Data Berhasil Ditambahkan');
+        return redirect('anggota')->with('msg', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -85,6 +87,8 @@ class AnggotaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $anggota = Anggota::find($id);
+        $anggota->delete();
+        return redirect('anggota')->with('msg', 'Data Berhasil Dihapus');
     }
 }
