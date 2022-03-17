@@ -31,7 +31,7 @@
                                     <td> {{ $agt->Alamat }}</td>
                                     <td> {{ $agt->No_Telp }}</td>
                                     <td class="text-center">
-                                        <form action="{{ url ('anggota/'.$agt->id_anggota) }}" method="POST" class="d-inline">
+                                        <form action="{{ url ('anggota/'.$agt->id) }}" method="POST" class="d-inline">
                                             @csrf 
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="badge badge-danger border-0" onclick="return confirm ('Yakin untuk mengahapus ?')">
