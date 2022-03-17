@@ -14,5 +14,4 @@ class Anggota extends Model
     protected $fillable = [
         'NIM', 'Nama_Anggota', 'Jenis_Kelamin', 'Alamat', 'No_Telp'
     ];
-
 }
