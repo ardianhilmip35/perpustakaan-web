@@ -65,7 +65,10 @@ class PetugasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $petugas = Petugas::find($id);
+        return view('petugas.edit', compact('petugas'), [
+            'title' => 'Edit Petugas',
+        ]);
     }
 
     /**

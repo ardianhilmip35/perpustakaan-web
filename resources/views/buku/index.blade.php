@@ -31,6 +31,9 @@
                                     <td> {{ $bk->tahun_terbit }}</td>
                                     <td> {{ $bk->kategori }}</td>
                                     <td class="text-center">
+                                    <form action="">
+                                            <a href="{{ url ('buku/'.$bk->id.'/edit') }}" class="badge badge-success bg-primary d-inline text-decoration-nonehil" >Edit</a>
+                                        </form> 
                                         <form action="{{ url ('buku/'.$bk->id) }}" method="POST" class="d-inline">
                                             @csrf 
                                             <input type="hidden" name="_method" value="DELETE">
