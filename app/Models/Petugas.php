@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Petugas extends Model
 {
+    
     use HasFactory;
+    protected $table = 'table_petugas';
+
+    protected $fillable = [
+        'nama_petugas', 'alamat', 'no_telp',
+    ];
 }
