@@ -30,11 +30,14 @@
                                     <td> {{ $agt->Jenis_Kelamin }}</td>
                                     <td> {{ $agt->Alamat }}</td>
                                     <td> {{ $agt->No_Telp }}</td>
-                                    <td class="text-center">
+                                    <td class="text-center" class="">
+                                        <form action="">
+                                            <a href="{{ url ('anggota/'.$agt->id.'/edit') }}" class="badge badge-success bg-primary d-inline text-decoration-nonehil" >edit</a>
+                                        </form>
                                         <form action="{{ url ('anggota/'.$agt->id) }}" method="POST" class="d-inline">
                                             @csrf 
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <button type="submit" class="badge badge-danger border-0" onclick="return confirm ('Yakin untuk mengahapus ?')">
+                                            <button type="submit" class="badge badge-danger border-0 bg-danger" onclick="return confirm ('Yakin untuk mengahapus ?')">
                                                 delete<span data-feather="x-circle"></span></button>
                                         </form>
                                     </td>
