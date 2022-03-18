@@ -41,7 +41,8 @@ class AnggotaController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Anggota::create($request->all());
+        return redirect('anggota')->with('msg', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -63,7 +64,10 @@ class AnggotaController extends Controller
      */
     public function edit($id)
     {
-       
+        $anggota = Anggota::find($id);
+        return view('anggota.edit', compact('anggota'), [
+            'title' => 'Edit Mahasiswa',
+        ]);
     }
 
     /**
@@ -75,7 +79,15 @@ class AnggotaController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
+        $anggota = Anggota::find($id);
+        $anggota->NIM = $request->NIM;
+        $anggota->Nama_Anggota = $request->Nama_Anggota;
+        $anggota->Jenis_Kelamin = $request->Jenis_Kelamin;
+        $anggota->Alamat = $request->Alamat;
+        $anggota->No_Telp = $request->No_Telp;
+        $anggota->save();
+
+        return redirect()->route('anggota.index');
     }
 
     /**
@@ -86,6 +98,8 @@ class AnggotaController extends Controller
      */
     public function destroy($id)
     {
-        
+        $anggota = Anggota::find($id);
+        $anggota->delete();
+        return redirect('anggota')->with('msg', 'Data Berhasil Dihapus');
     }
 }

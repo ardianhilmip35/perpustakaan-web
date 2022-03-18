@@ -15,9 +15,9 @@
                                 <th scope="col">No</th>
                                 <th scope="col">Nim</th>
                                 <th scope="col">Nama</th>
-                                <th scope="col">Jurusan</th>
-                                <th scope="col">No. hp</th>
+                                <th scope="col">Jenis Kelamin</th>
                                 <th scope="col">Alamat</th>
+                                <th scope="col">No Hp</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
